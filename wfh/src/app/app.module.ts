@@ -12,7 +12,6 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UserService } from './shared/user.service';
 import { DatepickerComponent  } from './datepicker/datepicker.component';
 import { QueryResultTableComponent } from './query-result-table/query-result-table.component';
@@ -25,6 +24,8 @@ import {
 } from '@angular/material';
 
 import { RouterModule } from '@angular/router';
+import { EntryService } from './shared/entry.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatFormFieldModule,
@@ -58,7 +60,7 @@ import { RouterModule } from '@angular/router';
       { path: '**', redirectTo: 'login', pathMatch: 'full'}
     ])
   ],
-  providers: [ UserService ],
+  providers: [ UserService, EntryService ],
   bootstrap: [ AppComponent ]
 })
 

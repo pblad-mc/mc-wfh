@@ -33,8 +33,9 @@
 
                 <div class="inputTextWrapper">
 
-                    <app-autocomplete-filter (selected)="receiveEmployee($event)">
-                    </app-autocomplete-filter>
+                  <!--<input [(ngModel)]="selectedUser" #selectedUser="ngModel" id="user"/>-->
+                    <!--<app-autocomplete-filter (selected)="receiveEmployee($event)">-->
+                    <!--</app-autocomplete-filter>-->
 
                 </div>
 
@@ -46,7 +47,7 @@
 
 
                 <div style="padding-top: 20px;">
-                    <button class="submitButton" (click)="showQueryResults = true; hasNewData = true"> SEARCH </button>
+                    <button class="submitButton" (click)="getEntry()"> SEARCH </button>
                 </div>
             </div>
         </div>
@@ -69,7 +70,7 @@
 
 
     <div *ngIf="showQueryResults">
-        <app-query-result-table *ngIf="hasNewData" [user]="selectedUser" [date]="date" [entry]="entry"></app-query-result-table>
+        <app-query-result-table [user]="selectedUser" [date]="date" [entry]="entry"></app-query-result-table>
     </div>
 
     <app-footer-component></app-footer-component>

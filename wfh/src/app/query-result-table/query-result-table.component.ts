@@ -9,7 +9,7 @@ import { Entry } from '../shared/entry.model';
 })
 
 export class QueryResultTableComponent implements OnInit {
-    @Input() user: User;
+    @Input() user: string;
     @Input() date: string;
     @Input() entry: Entry;
 
@@ -21,10 +21,10 @@ export class QueryResultTableComponent implements OnInit {
         console.log(this.date, 'date');
         console.log(this.entry, 'entry');
 
-        if (this.user && !this.date) {
-            this.entriesFromUser = this.user.entries;
-        } else if (this.user && this.date && this.entry) {
+        // if (this.user && !this.date) {
+        //     this.entriesFromUser = this.user.entries;
+        // } else if (this.user && this.date && this.entry) {
             this.entriesFromUser.push(this.entry);
-        }
+        // }
     }
 }
